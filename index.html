@@ -18,11 +18,23 @@
     deploymentId: 'b9efa8ea-97c0-4be2-9477-ab35252368e6'
   });
 </script>
+<script>
+const myTimeout = setTimeout(myGreeting, 5000);
+
+function myGreeting() {
+  document.getElementById("demo").innerHTML = "Happy Birthday!"
+}
+</script>
 <script type="text/javascript" charset="utf-8">
-  alert("hello world");
   Genesys("subscribe", "Journey.ready", function() {
-  console.log("Journey plugin is ready.")
-});
+    alert("Journey plugin is ready.")
+  });
+  Genesys("subscribe", "ready", function() {
+    alert("Genesys plugin is ready.")
+  });
+  Genesys("subscribe", "Messenger.ready", function() {
+    alert("Messenger plugin is ready.")
+  });
 </script>
   <div id="genesys-support-center"></div> 
 <div>
