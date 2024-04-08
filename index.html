@@ -15,24 +15,21 @@
     ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
   })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
     environment: 'prod-euc1',
-    deploymentId: '81044a08-c6a8-41fb-b36f-59e45182eddb'
+    // deploymentId: '81044a08-c6a8-41fb-b36f-59e45182eddb' // Help centre
+    deploymentId: 'b9efa8ea-97c0-4be2-9477-ab35252368e'  // MEssenger
   });
 </script>
 <script type="text/javascript" charset="utf-8">
-  Genesys("subscribe", "Journey.ready", function() {
-    alert("Journey plugin is ready.")
-  });
-  Genesys("subscribe", "ready", function() {
-    alert("Genesys plugin is ready.")
-  });
   Genesys("subscribe", "Messenger.ready", function() {
-    alert("Messenger plugin is ready.")
+    alert("Messenger plugin is ready.");
   });
-  Genesys("subscribe", "SupportCenterHelper.ready", function() {
-    alert("SupportCenterHelper plugin is ready.")
+
+  Genesys("subscribe", "Messenger.opened", function() {
+    alert("Messenger opened.");
   });
-  Genesys("subscribe", "SupportCenter.ready", function() {
-    alert("SupportCenter plugin is ready.")
+
+  Genesys("subscribe", "Messenger.closed", function() {
+    alert("Messenger closed.");
   });
 </script>
   <div id="genesys-support-center"></div> 
