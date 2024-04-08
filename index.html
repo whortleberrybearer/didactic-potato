@@ -18,11 +18,11 @@
     deploymentId: 'b9efa8ea-97c0-4be2-9477-ab35252368e6'
   });
 </script>
-<script type="text/javascript" charset="utf-8">
-Genesys('subscribe', 'Messenger.ready', function () {
+  <script type="text/javascript" charset="utf-8">
+  Genesys('subscribe', 'Messenger.ready', function () {
+    alert('Messenger ready');
+  });
 
-  alert('Messenger ready');
-  
   Genesys("subscribe", "Messenger.opened", function() {
     alert("Messenger opened.");
   });
@@ -30,7 +30,6 @@ Genesys('subscribe', 'Messenger.ready', function () {
   Genesys("subscribe", "Messenger.closed", function() {
     alert("Messenger closed.");
   });
-});
 </script>
   <div id="genesys-support-center"></div> 
 <div>
