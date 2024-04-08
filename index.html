@@ -21,35 +21,15 @@
 <script type="text/javascript" charset="utf-8">
 Genesys('subscribe', 'Messenger.ready', function () {
 
-  console.log('Messenger ready');
+  alert('Messenger ready');
   
-  Genesys(
-    'command',
-    'Messenger.open',
-    {},
-    () => {
-     /*fulfilled callback*/
-     console.log('Messenger opened');
-    },
-    (error) => {
-     /*rejected callback*/
-     console.log("Couldn't open messenger.", error);
-    }
-  );
+  Genesys("subscribe", "Messenger.opened", function() {
+    alert("Messenger opened.");
+  });
 
-  Genesys(
-    'command',
-    'Messenger.closed',
-    {},
-    () => {
-     /*fulfilled callback*/
-     console.log('Messenger closed');
-    },
-    (error) => {
-     /*rejected callback*/
-     console.log("Couldn't close messenger.", error);
-    }
-  );
+  Genesys("subscribe", "Messenger.closed", function() {
+    alert("Messenger closed.");
+  });
 });
 </script>
   <div id="genesys-support-center"></div> 
