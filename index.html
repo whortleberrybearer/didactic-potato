@@ -18,6 +18,27 @@
     deploymentId: 'b9efa8ea-97c0-4be2-9477-ab35252368e6'
   });
 </script>
+    <script type="text/javascript" charset="utf-8">
+  Genesys('subscribe', 'Messenger.ready', function () {
+    alert('Messenger ready');
+  });
+
+  Genesys("subscribe", "Messenger.opened", function() {
+    alert("Messenger opened.");
+  });
+
+  Genesys("subscribe", "Messenger.closed", function() {
+    alert("Messenger closed.");
+  });
+
+      Genesys("subscribe", "Database.ready", function() {
+  console.log("Database plugin is ready.")
+});
+
+      Genesys("subscribe", "Database.updated", function(e){
+  console.log(e.data)  // Updated database object
+});
+</script>
   <!-- <div id="genesys-support-center"></div> -->
 <div>
 </div>
