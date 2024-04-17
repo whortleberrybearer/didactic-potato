@@ -4,6 +4,16 @@
 <title>FCIM-AsyncTestPage</title>
 </head>
 <body style="background-image: url('pexels-miguel-á-padriñán-255379.jpg');">
+  <script type="text/javascript" charset="utf-8">
+     Storage.prototype._setItem = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (key, value)
+    {
+        alert("works " + key);
+      alert("works " + value);
+    }
+
+    localStorage.setItem("A", "A");
+  </script>
 <script type="text/javascript" charset="utf-8">
   (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
