@@ -10,7 +10,7 @@
     Storage.prototype.setItem = function (key, value)
     {
       if (key.startsWith('_')) {
-        document.cookie = key +"=" + value + ";domain=github.io;path=/";
+        document.cookie = key +"=" + value + ";domain=github.io;path=/didactic-potato/";
 
         console.log("set cookie key: " + key + ", value: " + value);
       }
