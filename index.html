@@ -6,13 +6,30 @@
 <body style="background-image: url('pexels-miguel-á-padriñán-255379.jpg');">
   <script type="text/javascript" charset="utf-8">
      Storage.prototype._setItem = Storage.prototype.setItem;
+    Storage.prototype._getItem = Storage.prototype.getItem;
     Storage.prototype.setItem = function (key, value)
     {
-        alert("works " + key);
-      alert("works " + value);
+      if (key.startsWith('_')) {
+        document.cookie = key +"=" + value + ";domain=.github.io;path=/";
+
+        console.log("set cookie key: " + key + ", value: " + value);
+      }
+      
+      Storage.prototype._setItem(key, value);
     }
 
-    localStorage.setItem("A", "A");
+    Storage.prototype.getItem = function (key)
+    {
+      if (key.startsWith('_')) {
+      
+
+        //console.log("get cookie key:" + key + ", value: " + value);
+
+        console.log("get cookie key: " + key);
+      }
+      
+      return Storage.prototype._getItem(key);
+    }
   </script>
 <script type="text/javascript" charset="utf-8">
   (function (g, e, n, es, ys) {
