@@ -4,6 +4,33 @@
 <title>FCIM-AsyncTestPage</title>
 </head>
 <body style="background-image: url('pexels-miguel-á-padriñán-255379.jpg');">
+  <script type="text/javascript" charset="utf-8">
+     Storage.prototype._setItem = Storage.prototype.setItem.bind(localStorage);
+    Storage.prototype._getItem = Storage.prototype.getItem.bind(localStorage);
+    Storage.prototype.setItem = function (key, value)
+    {
+      if (key.startsWith('_')) {
+        document.cookie = key +"=" + value + ";domain=.github.io;path=/";
+
+        console.log("set cookie key: " + key + ", value: " + value);
+      }
+      
+      Storage.prototype._setItem(key, value);
+    }
+
+    Storage.prototype.getItem = function (key)
+    {
+      if (key.startsWith('_')) {
+      
+
+        //console.log("get cookie key:" + key + ", value: " + value);
+
+        console.log("get cookie key: " + key);
+      }
+      
+      return Storage.prototype._getItem(key);
+    }
+  </script>
 <script type="text/javascript" charset="utf-8">
   (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
