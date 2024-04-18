@@ -10,6 +10,7 @@
     Storage.prototype.setItem = function (key, value)
     {
       if (key.startsWith('_')) {
+        let exdays = 1;
         const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         let expires = "expires=" + d.toUTCString();
