@@ -15,7 +15,7 @@
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         let expires = "expires=" + d.toUTCString();
         
-        document.cookie = key + "=" + value + ";" + expires + ";domain=whortleberrybearer.github.io;path=/";
+        document.cookie = key + "=" + value + ";" + expires + ";domain=github.io;path=/";
 
         console.log("set cookie key: " + key + ", value: " + value);
       }
